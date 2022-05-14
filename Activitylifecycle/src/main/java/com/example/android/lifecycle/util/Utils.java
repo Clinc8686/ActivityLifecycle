@@ -39,11 +39,11 @@ public class Utils {
         public void run() {
           // Get the stack of Activity lifecycle methods called and print to TextView
           StringBuilder sbMethods = new StringBuilder();
-          List<String> listMethods = mStatusTracker.getMethodList();
+          List<String> listMethods = mStatusTracker.getMethodList();    //returned List<String>
           for (String method : listMethods) {
-              sbMethods.insert(0, method + "\r\n");
+              sbMethods.insert(0, method + "\r\n"); //Fügt dem String alle Aktivitäten aus dem StatusTracker hinzu
           }
-          if(viewMethods != null) {
+          if(viewMethods != null) {     //Text anzeigen/verändern wenn TextView mit Wert initialisiert
               viewMethods.setText(sbMethods.toString());
           }
 
@@ -52,7 +52,7 @@ public class Utils {
           for (String key : mStatusTracker.keySet()) {
             sbStatus.insert(0,key + ": " + mStatusTracker.getStatus(key) + "\n");
           }
-          if(viewStatus != null) {
+          if(viewStatus != null) {     //Text anzeigen/verändern wenn TextView mit Wert initialisiert
               viewStatus.setText(sbStatus.toString());
           }
         }

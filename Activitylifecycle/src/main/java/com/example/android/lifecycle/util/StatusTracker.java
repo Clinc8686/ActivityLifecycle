@@ -48,7 +48,7 @@ public class StatusTracker {
    * @param activityName
    * @param status
    */
-  public void setStatus(String activityName, String status) {
+  public void setStatus(String activityName, String status) {   //Fügt der Liste die Aktivität hinzu
     mMethodList.add(activityName + "." + status + "()");
     if (mStatusMap.containsKey(activityName)) mStatusMap.remove(activityName);
     mStatusMap.put(activityName, status);
@@ -65,10 +65,10 @@ public class StatusTracker {
     status = status.substring(2, status.length());
 
     // String manipulation to ensure the status value is spelled correctly.
-    if (status.endsWith("e")) {
+    if (status.endsWith("e")) { //resume
       status = status.substring(0, status.length() - 1);
     }
-    if (status.endsWith("p")) {
+    if (status.endsWith("p")) { //stop
       status = status + "p";
     }
     status = status + STATUS_SUFFIX;
@@ -76,6 +76,6 @@ public class StatusTracker {
   }
 
   public Set<String> keySet() {
-    return mStatusMap.keySet();
+    return mStatusMap.keySet(); //Alle Keys der Map
   }
 }
